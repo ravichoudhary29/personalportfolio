@@ -1,9 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Experience } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  experience:Experience
+};
 
-function ExperienceCard({}: Props) {
+function ExperienceCard({experience}: Props) {
   return (
     <div>
       <article
@@ -30,44 +34,30 @@ function ExperienceCard({}: Props) {
           }}
           className="w-32 h-32 rounded-full xl:[200px] object-cover
                         object-center"
-          src="https://media.licdn.com/dms/image/C5622AQE0DwocsYZKCg/feedshare-shrink_2048_1536/0/1678448805129?e=1681344000&v=beta&t=XAYWln1MHQ6Hoe2RnPuvNqIyGROOK-eiRqpmL_l5CFQ"
+          src={urlFor(experience.companyImage).url()}
         />
         <div className="px-0 md:px-10">
           <h4 className="text-4xl font-light">CEO OF PAPAFAM</h4>
           <p className="font-bold text-2xl mt-1">PAPAFAM</p>
           <div className="flex space-x-2 my-2">
-            <img
-              className="h-10 w-10 rounded-full"
-              src="https://img.freepik.com/free-icon/html-5_318-674234.jpg?w=2000"
-              alt="logo"
-            />
-            <img
-              className="h-10 w-10 rounded-full"
-              src="https://img.freepik.com/free-icon/html-5_318-674234.jpg?w=2000"
-              alt="logo"
-            />
-            <img
-              className="h-10 w-10 rounded-full"
-              src="https://img.freepik.com/free-icon/html-5_318-674234.jpg?w=2000"
-              alt="logo"
-            />
+            {experience.technologies.map((technology) => (
+              <img
+                key={technology._id}
+                className="h-10 w-10 rounded-full"
+                src={urlFor(technology.image).url()}
+              />
+            ))}
           </div>
           <p className="uppercase py-5 text-gray-300">
-            Started working... ended working...
+            {new Date(experience.dateStarted).toDateString()} -{" "}
+            {experience.isCurrentlyWorkingHere
+              ? "Present"
+              : new Date(experience.dateEnded).toDateString}
           </p>
-          <ul className="list-disc space-y-4 ml-5 text-lg">
-            <li>
-              Summary Points Summary Points Summary Points Summary Points
-              Summary Points
-            </li>
-            <li>
-              Summary Points Summary Points Summary Points Summary Points
-              Summary Points
-            </li>
-            <li>
-              Summary Points Summary Points Summary Points Summary Points
-              Summary Points
-            </li>
+          <ul className="list-disc space-y-4 ml-5 text-lg max-h-96  overflow-y-scroll  scrollbar-thin  scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80 pr-5">
+            {experience.points.map((point, i) => (
+              <li key={i}>{point}</li>
+            ))}
           </ul>
         </div>
       </article>

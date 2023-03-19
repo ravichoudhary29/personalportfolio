@@ -1,10 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Project } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  projects:Project[]
+};
 
-function Projects({}: Props) {
-  const projects = [1, 2, 3, 4, 5];
+function Projects({projects}: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -25,7 +28,7 @@ function Projects({}: Props) {
         className="relative w-full flex overflow-x-scroll overflow-y-hidden
                    snap-x snap-mandatory z-20  scrollbar-thin scroll-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80"
       >
-        {projects.map((project, i) => (
+        {projects?.map((project, i) => (
           <div
             className="w-screen flex-shrink-0 snap-center flex flex-col
                             space-y-5 items-center justify-content p-20
@@ -36,20 +39,28 @@ function Projects({}: Props) {
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              src="https://cdn.sanity.io/images/ltuexkre/production/af7ca99b5a796d0698cf9121a4a0795b5022b6be-666x375.png"
+              src={urlFor(project?.image).url()}
             />
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-4xl font-semifold text-center">
                 <span className="underline decoration-[#F7AB0A]/50">
-                  Case {i + 1} of {projects.length}: Netflix Clone
-                </span>
+                  Case {i + 1} of {projects.length}
+                </span>{" "}
+                {project?.title}
               </h4>
+            <div className="flex items-center space-x-2 justify-center">
+              {project?.technologies.map((technology) => (
+                <img
+                  className="h-10 w-10"
+                  key={technology._id}
+                  src={urlFor(technology.image).url()}
+                alt=""
+                />
+          ))}
+                </div>
+
               <p className="text-lg text-center md:text-left">
-                Netflix 2.0 app that has a Log In and Log Out Authentication
-                with Google. It has a beautiful Home Screen with all the movies
-                looking just like Netflix. There is also a subscription page
-                where you can see your active monthly subscription. We also use
-                Stripe Payments for the monthly Neftflix Subscription.
+                {project.summary}
               </p>
             </div>
           </div>

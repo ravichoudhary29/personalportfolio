@@ -2,12 +2,16 @@ import { MotionConfig } from "framer-motion";
 
 import React from "react";
 import { motion } from "framer-motion";
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity";
 // import Image from "next/image";
 // import aboutImage from "../public/images/photo1.jpeg";
 
-type Props = {};
+type Props = {
+  pageInfo:PageInfo
+};
 
-function About({}: Props) {
+function About({pageInfo}: Props) {
   return (
     <motion.div
       initial={{
@@ -43,10 +47,10 @@ function About({}: Props) {
         }}
         viewport={
           {
-            //   once: true,
+              once: true,
           }
         }
-        src="https://media.licdn.com/dms/image/C4D22AQE9e0s6euQ7ow/feedshare-shrink_1280/0/1675246611068?e=1681344000&v=beta&t=P0LX5Muock9GWScVhiJRm5KJEFcVjooH9KcpjhpmsoA"
+        src={urlFor(pageInfo?.profilePic).url()}
         alt="about-image"
         className="-mb-10 md:mb-0 flex-shrink-0 w-56 h-62 rounded-full 
         object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]  "
@@ -58,15 +62,7 @@ function About({}: Props) {
           background
         </h4>
         <p className="text-base">
-          Hey! I am Ravi. A Mumbai based Frontend Developer specialised in
-          React.js and Next.js. I am quite ethusiastic in exploring the field of
-          UI/UX design. I love coding and in my free time I love to make clones
-          of the famous applications of the world. I love when my coding leads
-          to a beautufully looking website. I feel an adranaline rush spreading
-          in my body. I love doing photography and want to explore the world
-          travelling and simultaneously capturing the beauty in my DSLR. I am a
-          fitness enthusiast and in my free time love to do Yoga and exercise
-          along with meditation.
+        {pageInfo?.backgroundInformation}
         </p>
       </div>
     </motion.div>
