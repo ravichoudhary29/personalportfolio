@@ -54,7 +54,6 @@ export interface Experience extends SanityBody{
 
 }
 
-
 export interface Project extends SanityBody{
     title: string;
     _type: "project";

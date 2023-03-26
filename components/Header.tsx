@@ -4,12 +4,11 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Social } from "../typings";
 
-
 type Props = {
-  socials:Social[]
+  socials: Social[];
 };
 
-export default function Header({socials }: Props) {
+export default function Header({ socials }: Props) {
   return (
     <header
       className="sticky top-0 p-5  flex items-start 
@@ -42,18 +41,16 @@ export default function Header({socials }: Props) {
             className="scale-100 hover:scale-125 ease-in duration-100"
           />
         ))}
-        
 
-        
         <SocialIcon
           url="https://wa.me/9088099081"
           fgColor="#f87171"
           bgColor="transparent"
           network="whatsapp"
           className="scale-100 hover:scale-125 ease-in duration-100"
-          />
+        />
 
-          {/* Earlier hard coded value */}
+        {/* Earlier hard coded value */}
         {/* <SocialIcon
           url="https://twitter.com/thenomad_Ravi"
           fgColor="#f87171"
@@ -78,8 +75,6 @@ export default function Header({socials }: Props) {
           bgColor="transparent"
           className="scale-100 hover:scale-125 ease-in duration-100"
         /> */}
-
-
       </motion.div>
 
       <motion.div

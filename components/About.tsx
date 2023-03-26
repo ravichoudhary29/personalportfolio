@@ -8,10 +8,10 @@ import { urlFor } from "../sanity";
 // import aboutImage from "../public/images/photo1.jpeg";
 
 type Props = {
-  pageInfo:PageInfo
+  pageInfo: PageInfo;
 };
 
-function About({pageInfo}: Props) {
+function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{
@@ -45,11 +45,9 @@ function About({pageInfo}: Props) {
           x: 0,
           opacity: 1,
         }}
-        viewport={
-          {
-              once: true,
-          }
-        }
+        viewport={{
+          once: true,
+        }}
         src={urlFor(pageInfo?.profilePic).url()}
         alt="about-image"
         className="-mb-10 md:mb-0 flex-shrink-0 w-56 h-62 rounded-full 
@@ -61,9 +59,7 @@ function About({pageInfo}: Props) {
           <span className="underline decoration-[#F7AB0A]">little</span>{" "}
           background
         </h4>
-        <p className="text-base">
-        {pageInfo?.backgroundInformation}
-        </p>
+        <p className="text-base">{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );

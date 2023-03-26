@@ -4,10 +4,10 @@ import { Project } from "../typings";
 import { urlFor } from "../sanity";
 
 type Props = {
-  projects:Project[]
+  projects: Project[];
 };
 
-function Projects({projects}: Props) {
+function Projects({ projects }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -30,6 +30,7 @@ function Projects({projects}: Props) {
       >
         {projects?.map((project, i) => (
           <div
+            key={project._id}
             className="w-screen flex-shrink-0 snap-center flex flex-col
                             space-y-5 items-center justify-content p-20
                             md:p-44 h-screen "
@@ -48,16 +49,16 @@ function Projects({projects}: Props) {
                 </span>{" "}
                 {project?.title}
               </h4>
-            <div className="flex items-center space-x-2 justify-center">
-              {project?.technologies.map((technology) => (
-                <img
-                  className="h-10 w-10"
-                  key={technology._id}
-                  src={urlFor(technology.image).url()}
-                alt=""
-                />
-          ))}
-                </div>
+              <div className="flex items-center space-x-2 justify-center">
+                {project.technology?.map((technology) => (
+                  <img
+                    className="h-10 w-10"
+                    key={technology._id}
+                    src={urlFor(technology.image).url()}
+                    alt=""
+                  />
+                ))}
+              </div>
 
               <p className="text-lg text-center md:text-left">
                 {project.summary}

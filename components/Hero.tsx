@@ -21,21 +21,21 @@ function Hero({ pageInfo }: Props) {
   });
 
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden ">
       <BackgroundCircles />
       <img
-        className="relative rounded-full h-32 w-32 mx-auto object-cover"
+        className="relative rounded-full h-38 w-32 mx-auto object-cover"
         src={urlFor(pageInfo?.heroImage).url()}
         alt="profile-picture"
       />
       <div className="z-20">
-        <h2 className="text-sm uppercase text-red-300 pb-2 tracking-[15px] italic hover:not-italic font-sans">
+        <h2 className="text-xs uppercase md:text-lg text-red-300 pb-2 tracking-[15px] italic hover:not-italic font-sans">
           {pageInfo?.role}
         </h2>
-        <h1 className="text-5xl lg:text-6xl font-semibold px-10 text-[#b4ead8]">
+        <h2 className="text-3xl lg:text-6xl md:text-5xl font-semibold px-10 text-[#b4ead8]">
           <span>{text}</span>
           <Cursor cursorColor="#F7AB0A" />
-        </h1>
+        </h2>
         <div className="pt-5">
           <Link href="#about">
             <button className="heroButton">About</button>
