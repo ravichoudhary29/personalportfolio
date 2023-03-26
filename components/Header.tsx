@@ -94,16 +94,20 @@ export default function Header({ socials }: Props) {
         className="flex flex-row items-center text-grey-300 cursor-pointer
          "
       >
-        <SocialIcon
-          url="#contact"
-          className="cursor-pointer scale-100 hover:scale-125 ease-in duration-100"
-          network="email"
-          fgColor="#f87171"
-          bgColor="transparent"
-        />
-        <p className="uppercase hidden md:inline-flex text-sm text-red-400 scale-100 hover:scale-125 ease-in duration-100 italic">
-          Get in Touch
-        </p>
+        <div>
+          <SocialIcon
+            url="#contact"
+            className="cursor-pointer scale-100 hover:scale-125 ease-in duration-100"
+            network="email"
+            fgColor="#f87171"
+            bgColor="transparent"
+          />
+          <a href="#contact">
+            <p className="uppercase hidden md:inline-flex text-sm text-red-400 scale-100 hover:scale-125 ease-in duration-100 italic">
+              Get in Touch
+            </p>
+          </a>
+        </div>
       </motion.div>
     </header>
   );

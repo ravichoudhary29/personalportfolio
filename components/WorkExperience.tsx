@@ -7,7 +7,7 @@ type Props = {
   experiences: Experience[];
 };
 
-function WorkExperience({experiences}: Props) {
+function WorkExperience({ experiences }: Props) {
   return (
     <motion.div
       initial={{
@@ -36,7 +36,7 @@ function WorkExperience({experiences}: Props) {
       >
         {experiences?.map((experience) => (
           <ExperienceCard key={experience._id} experience={experience} />
-     ))}
+        ))}
       </div>
     </motion.div>
   );
