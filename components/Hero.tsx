@@ -5,12 +5,11 @@ import Link from "next/link";
 import { PageInfo } from "../typings";
 import { urlFor } from "../sanity";
 
-
 type Props = {
-  pageInfo:PageInfo
+  pageInfo: PageInfo;
 };
 
-function Hero({pageInfo}: Props) {
+function Hero({ pageInfo }: Props) {
   const [text, count] = useTypewriter({
     words: [
       `Hi, The name's ${pageInfo?.name}`,
@@ -31,7 +30,7 @@ function Hero({pageInfo}: Props) {
       />
       <div className="z-20">
         <h2 className="text-sm uppercase text-red-300 pb-2 tracking-[15px] italic hover:not-italic font-sans">
-          {pageInfo.role}
+          {pageInfo?.role}
         </h2>
         <h1 className="text-5xl lg:text-6xl font-semibold px-10 text-[#b4ead8]">
           <span>{text}</span>

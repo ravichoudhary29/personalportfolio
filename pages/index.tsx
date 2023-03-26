@@ -64,8 +64,8 @@ const Home = ({ pageInfo, experiences, skills, socials, projects }: Props) => {
         <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
             <img
-              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer "
-              src="https://media.licdn.com/dms/image/C5622AQGBzkIynblZ7g/feedshare-shrink_1280/0/1678448805393?e=1681344000&v=beta&t=_e6yHh2W5654cdw9QRhSkDBf4vv7xqjBYeSiDdLTnQ0"
+              className="h-8 w-8 rounded-full filter grayscale hover:grayscale-0 cursor-pointer hover:scale-125 "
+              src="https://cdn-icons-png.flaticon.com/512/44/44603.png"
               alt=""
             />
           </div>

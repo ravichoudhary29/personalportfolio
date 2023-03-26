@@ -4,10 +4,10 @@ import { Experience } from "../typings";
 import { urlFor } from "../sanity";
 
 type Props = {
-  experience:Experience
+  experience: Experience;
 };
 
-function ExperienceCard({experience}: Props) {
+function ExperienceCard({ experience }: Props) {
   return (
     <div>
       <article
@@ -52,8 +52,9 @@ function ExperienceCard({experience}: Props) {
             {new Date(experience.dateStarted).toDateString()} -{" "}
             {experience.isCurrentlyWorkingHere
               ? "Present"
-              : new Date(experience.dateEnded).toDateString}
+              : new Date(experience.dateEnded).toDateString()}
           </p>
+
           <ul className="list-disc space-y-4 ml-5 text-lg max-h-96  overflow-y-scroll  scrollbar-thin  scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80 pr-5">
             {experience.points.map((point, i) => (
               <li key={i}>{point}</li>
