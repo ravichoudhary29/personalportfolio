@@ -82,7 +82,7 @@ function ContactMe({}: Props) {
             type="submit"
             className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold"
           >
-            Submittt
+            Submittt karo na baba
           </button>
         </form>
       </div>
