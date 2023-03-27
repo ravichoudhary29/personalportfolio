@@ -16,7 +16,7 @@ import { fetchSkills } from "../utils/fetchSkills";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSocial } from "../utils/fetchSocials";
 
-interface Props {
+type Props ={
   pageInfo: PageInfo;
   experiences: Experience[];
   skills: Skill[];
