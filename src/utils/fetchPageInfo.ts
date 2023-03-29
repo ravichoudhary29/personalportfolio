@@ -1,13 +1,9 @@
-import fetch from "node-fetch";
+// import fetch from "node-fetch";
 import { PageInfo } from "../../typings";
+import API from "./axios";
 
 export const fetchPageInfo = async () => {
-  const res = await fetch(`/api/getPageInfo`);
+  const { data } = await API.get<{ pageInfo: PageInfo }>(`/getPageInfo`);
 
-  const data = await res.json();
-  const pageInfo: PageInfo = data.pageInfo;
-
-  //   console.log("fetching", pageInfo);
-
-  return pageInfo;
+  return data.pageInfo;
 };

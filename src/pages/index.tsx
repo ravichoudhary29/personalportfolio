@@ -17,7 +17,7 @@ import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSocial } from "../utils/fetchSocials";
 
 type Props = {
-  pageInfo: PageInfo;
+  pageInfo: PageInfo | null;
   experiences: Experience[];
   skills: Skill[];
   projects: Project[];
@@ -27,6 +27,8 @@ type Props = {
 const inter = Inter({ subsets: ["latin"] });
 
 const Home = ({ pageInfo, experiences, skills, socials, projects }: Props) => {
+  if (!pageInfo) return;
+
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0  scroll-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 scrollbar-thin">
       <Head>
@@ -78,11 +80,34 @@ const Home = ({ pageInfo, experiences, skills, socials, projects }: Props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo: PageInfo = await fetchPageInfo();
-  const experiences: Experience[] = await fetchExperiences();
-  const skills: Skill[] = await fetchSkills();
-  const projects: Project[] = await fetchProjects();
-  const socials: Social[] = await fetchSocial();
+  let pageInfo: PageInfo | null = null;
+  let experiences: Experience[] = [];
+  let skills: Skill[] = [];
+  let projects: Project[] = [];
+  let socials: Social[] = [];
+
+  try {
+    const [
+      pageInfoData,
+      experiencesData,
+      skillsData,
+      projectsData,
+      socialsData,
+    ] = await Promise.all([
+      fetchPageInfo(),
+      fetchExperiences(),
+      fetchSkills(),
+      fetchProjects(),
+      fetchSocial(),
+    ]);
+    pageInfo = pageInfoData;
+    experiences = experiencesData;
+    skills = skillsData;
+    projects = projectsData;
+    socials = socialsData;
+  } catch (error) {
+    console.error(error);
+  }
 
   return {
     props: {

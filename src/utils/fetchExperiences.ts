@@ -1,13 +1,11 @@
-import fetch from "node-fetch";
+// import fetch from "node-fetch";
 import { Experience } from "../../typings";
+import API from "./axios";
 
 export const fetchExperiences = async () => {
-  const res = await fetch(`/api/getExperience`);
+  const { data } = await API.get<{ experiences: Array<Experience> }>(
+    `/getExperience`
+  );
 
-  const data = await res.json();
-  const experiences: Experience[] = data.experiences;
-
-  // console.log("fetching",experiences)
-
-  return experiences;
+  return data.experiences;
 };
