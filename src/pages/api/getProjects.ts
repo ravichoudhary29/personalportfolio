@@ -1,24 +1,23 @@
 // Next.js API route support:https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import {groq} from 'next-sanity'
-import { sanityClient } from "../../sanity";
-import {Experience} from "../../typings";
+import { groq } from "next-sanity";
+import { sanityClient } from "../../../sanity";
+import { Project } from "../../../typings";
 
 const query = groq`
-*[_type == "experience"]{
+*[_type == "project"]{
   ...,
   technologies[]->
 }`;
 
 type Data = {
-    experiences : Experience[]
-}
+  projects: Project[];
+};
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-
-    const experiences:Experience[]= await sanityClient.fetch(query)
-  res.status(200).json({ experiences});
+  const projects: Project[] = await sanityClient.fetch(query);
+  res.status(200).json({ projects });
 }

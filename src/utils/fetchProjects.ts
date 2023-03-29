@@ -1,4 +1,5 @@
-import { Project } from "../typings";
+import fetch from "node-fetch";
+import { Project } from "../../typings";
 
 export const fetchProjects = async () => {
   const res = await fetch(`/api/getProjects`);

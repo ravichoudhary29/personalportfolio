@@ -9,20 +9,20 @@ import Projects from "../components/Projects";
 import ContactMe from "../components/ContactMe";
 import Link from "next/link";
 import { GetStaticProps } from "next";
-import { Experience, PageInfo, Project, Skill, Social } from "../typings";
+import { Experience, PageInfo, Project, Skill, Social } from "../../typings";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchExperiences } from "../utils/fetchExperiences";
 import { fetchSkills } from "../utils/fetchSkills";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSocial } from "../utils/fetchSocials";
 
-type Props ={
+type Props = {
   pageInfo: PageInfo;
   experiences: Experience[];
   skills: Skill[];
   projects: Project[];
   socials: Social[];
-}
+};
 
 const inter = Inter({ subsets: ["latin"] });
 

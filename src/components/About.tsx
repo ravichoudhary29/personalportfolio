@@ -2,8 +2,8 @@ import { MotionConfig } from "framer-motion";
 
 import React from "react";
 import { motion } from "framer-motion";
-import { PageInfo } from "../typings";
-import { urlFor } from "../sanity";
+import { PageInfo } from "../../typings";
+import { urlFor } from "../../sanity";
 // import Image from "next/image";
 // import aboutImage from "../public/images/photo1.jpeg";
 

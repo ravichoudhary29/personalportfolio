@@ -1,4 +1,5 @@
-import { Experience } from "../typings";
+import fetch from "node-fetch";
+import { Experience } from "../../typings";
 
 export const fetchExperiences = async () => {
   const res = await fetch(`/api/getExperience`);

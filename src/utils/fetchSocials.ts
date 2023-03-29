@@ -1,4 +1,5 @@
-import { Social } from "../typings";
+import fetch from "node-fetch";
+import { Social } from "../../typings";
 
 export const fetchSocial = async () => {
   const res = await fetch(`/api/getSocials`);
