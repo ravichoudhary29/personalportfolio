@@ -24,8 +24,8 @@ function WorkExperience({ experiences }: Props) {
                             justify-evenly mx-auto items-center"
     >
       <h3
-        className="absolute top-12 uppercase tracking-[20px]
-                     text-[#fee2e2] text-2xl pt-5 z-20"
+        className=" text-sm  absolute top-12 uppercase tracking-[10px]
+                     text-[#fee2e2] lg:text-2xl pt-5 z-20"
       >
         Workexperience
       </h3>

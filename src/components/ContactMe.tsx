@@ -14,7 +14,7 @@ type Props = {};
 function ContactMe({}: Props) {
   const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
-    window.location.href = `mailto:kumar.ravi.vegan@gmail.com?subject=${formData.subject} &body=Hi, my name is ${formData.name}. ${formData.message}`;
+    window.location.href = `mailto:mailmeonravikumar@gmail.com?subject=${formData.subject} &body=Hi, my name is ${formData.name}. ${formData.message}`;
   };
 
   return (
@@ -25,12 +25,12 @@ function ContactMe({}: Props) {
     >
       <h3
         className="absolute top-24 uppercase tracking-[20px]
-                     text-[#fee2e2] text-2xl"
+                     text-[#fee2e2] text-xl md:text-2xl"
       >
         Contact
       </h3>
       <div className="flex flex-col space-y-0">
-        <h5 className="text-3xl font-semibold text-center italic">
+        <h5 className="text-xl md:text-3xl font-semibold text-center italic">
           I have got just what you need.{" "}
           <span className="underline decoration-[#F7AB0A]/50">Lets Talk</span>
         </h5>
@@ -45,15 +45,15 @@ function ContactMe({}: Props) {
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">kumar.ravi.vegan@gmail.com</p>
+            <p className="text-2xl">mailmeonravikumar@gmail.com</p>
           </div>
         </div>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit mx-auto"
+          className="flex flex-col space-y-2 w-fit mx-auto max-sm:pl-10"
         >
-          <div className="flex space-x-2 ">
+          <div className="flex space-x-2">
             <input
               {...register("name")}
               placeholder="Name"
@@ -82,7 +82,7 @@ function ContactMe({}: Props) {
             type="submit"
             className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold"
           >
-            Submittt
+            Submit
           </button>
         </form>
       </div>
