@@ -104,7 +104,7 @@ export default function Header({ socials }: Props) {
           />
           <a href="#contact">
             <p className="uppercase hidden md:inline-flex text-sm text-red-400 scale-100 hover:scale-125 ease-in duration-100 italic">
-              Get in Shape
+              Get in touch
             </p>
           </a>
         </div>

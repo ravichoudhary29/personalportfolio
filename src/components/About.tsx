@@ -28,7 +28,7 @@ function About({ pageInfo }: Props) {
                     items-center"
     >
       <h3
-        className=" top-50 uppercase tracking-[20px]
+        className=" top-55 uppercase tracking-[20px]
                      text-[#fee2e2] text-2xl z-10 mt-10 lg:px-0 xl:px-0 "
       >
         About
