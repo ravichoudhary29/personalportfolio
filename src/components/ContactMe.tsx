@@ -80,12 +80,16 @@ function ContactMe({}: Props) {
           />
           <button
             type="submit"
-            className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold"
+            className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold align-middle justify-center"
           >
             Submit
           </button>
         </form>
       </div>
+      <div
+        className="w-full absolute top-[15%] bg-[#F29090]/5 left-0
+                    h-[500px] -skew-y-12 -z-20"
+      />
     </div>
   );
 }

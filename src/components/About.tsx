@@ -61,6 +61,10 @@ function About({ pageInfo }: Props) {
         </h4>
         <p className="text-base">{pageInfo?.backgroundInformation}</p>
       </div>
+      <div
+        className="w-full absolute top-[25%] bg-[#F7AB0A]/5 left-0
+                    h-[600px] -skew-y-12"
+      />
     </motion.div>
   );
 }
