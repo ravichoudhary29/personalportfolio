@@ -24,7 +24,7 @@ function ContactMe({}: Props) {
                 md:flex-row max-w-full justify-evenly mx-auto items-center z-0"
     >
       <h3
-        className="absolute top-24 uppercase tracking-[20px]
+        className="absolute top-20 uppercase tracking-[20px]
                      text-[#fee2e2] text-xl md:text-2xl"
       >
         Contact
