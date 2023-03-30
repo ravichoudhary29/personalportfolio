@@ -36,7 +36,7 @@ function Projects({ projects }: Props) {
                             md:p-44 h-screen object-contain object-center "
           >
             <motion.img
-              className="object-cover max-h-screen sd:w-4 sd:h-4 md:w-48 md:h-48 lg:w-96 lg:h-96 rounded-md"
+              className="object-cover max-h-screen sd:w-6 sd:h-6 md:w-48 md:h-48 lg:w-96 lg:h-96 rounded-md"
               initial={{ y: -300, opacity: 0 }}
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
