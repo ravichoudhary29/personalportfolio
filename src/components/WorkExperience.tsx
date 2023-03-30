@@ -20,11 +20,11 @@ function WorkExperience({ experiences }: Props) {
         duration: 1.5,
       }}
       className="h-screen flex relative overflow-hidden flex-col
-                            text-left md:flex-row max-w-full px-10
+                            text-left md:flex-row max-w-full px-6 md:px-10
                             justify-evenly mx-auto items-center"
     >
       <h3
-        className=" text-sm  absolute top-12 uppercase tracking-[10px]
+        className=" text-lg  absolute top-12 uppercase tracking-[10px]
                      text-[#fee2e2] lg:text-2xl pt-5 z-20"
       >
         Workexperience

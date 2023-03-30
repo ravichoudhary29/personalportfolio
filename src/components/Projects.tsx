@@ -60,10 +60,22 @@ function Projects({ projects }: Props) {
                   />
                 ))}
               </div>
-
               <p className="text-sm md:text-base text-center md:text-left mb-4">
                 {project.summary}
               </p>
+              <div className="flex justify-center mt-10 cursor-pointer">
+                <a
+                  href={project.linkToBuild}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <h4 className=" text-sm bg-[#F97316] rounded-lg text-white px-4 py-2 hover:bg-[#CA6400] transition-colors">
+                    <span className="underline">Link to</span>
+                    {":"}
+                    {project?.title}
+                  </h4>
+                </a>
+              </div>
             </div>
           </div>
         ))}

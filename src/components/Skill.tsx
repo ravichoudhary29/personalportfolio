@@ -33,8 +33,8 @@ function Skill({ skill, directionLeft }: Props) {
                           duration-300 ease-in-out group-hover:bg-white h-24
                           w-24 md:w-28 md:h-28 xl:w-32 xl:h-32 rounded-full z-0"
       >
-        <div className="flex items-center justify-center h-full">
-          <p className="text-xl font-bold text-black opacity-100 align-middle justify-center">
+        <div className="flex items-center justify-center h-full align-middle">
+          <p className="text-md font-bold text-black opacity-100 align-middle justify-center object-contain p-10">
             {skill.title}
           </p>
         </div>
