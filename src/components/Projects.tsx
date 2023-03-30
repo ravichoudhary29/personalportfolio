@@ -36,7 +36,7 @@ function Projects({ projects }: Props) {
                             md:p-44 h-screen object-contain object-center "
           >
             <motion.img
-              className="object-cover max-h-screen sd:w-6 sd:h-6 md:w-48 md:h-48 lg:w-96 lg:h-96 rounded-md"
+              className="object-cover w-full max-h-screen md:w-52 md:h-52 lg:w-96 lg:h-96 rounded-md"
               initial={{ y: -300, opacity: 0 }}
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -50,10 +50,10 @@ function Projects({ projects }: Props) {
                 </span>{" "}
                 {project?.title}
               </h4>
-              <div className="flex items-center space-x-2 justify-center">
+              <div className="flex items-center space-x-4 justify-center">
                 {project?.technologies.map((technology) => (
                   <img
-                    className="h-8 w-8"
+                    className="h-6 w-6 md:h-8 md:w-8"
                     key={technology._id}
                     src={urlFor(technology?.image).url()}
                     alt="technology-image"
