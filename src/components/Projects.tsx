@@ -25,7 +25,7 @@ function Projects({ projects }: Props) {
         React Projects
       </h3>
       <div
-        className="relative w-full flex overflow-x-scroll overflow-y-hidden
+        className="relative w-full flex overflow-x-scroll overflow-y-scroll
                    snap-x snap-mandatory z-20  scrollbar-thin scroll-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 mt-20"
       >
         {projects?.map((project, i) => (

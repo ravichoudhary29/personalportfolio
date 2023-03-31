@@ -63,8 +63,8 @@ const Home = ({ pageInfo, experiences, skills, socials, projects }: Props) => {
         {/* Contact Me */}
       </section>
       <Link href="#hero">
-        <footer className="sticky bottom-5 w-full cursor-pointer">
-          <div className="flex items-center justify-center">
+        <footer className="sticky bottom-5 w-fit cursor-pointer">
+          <div className="flex items-center justify-center pl-96">
             <img
               className="h-8 w-8 rounded-full filter grayscale hover:grayscale-0 cursor-pointer hover:scale-125 "
               src="https://cdn-icons-png.flaticon.com/512/44/44603.png"
