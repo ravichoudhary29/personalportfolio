@@ -29,21 +29,22 @@ function ContactMe({}: Props) {
       >
         Contact
       </h3>
-      <div className="flex flex-col space-y-0 text-center">
-        <h5 className="text-xl md:text-3xl font-semibold text-center italic">
-          I have got just what you need.{" "}
-          <span className="underline decoration-[#F7AB0A]/50">Lets Talk</span>
+      <div className="flex flex-col space-y-0 text-center m-auto">
+        <h5 className="text-xl md:text-3xl font-semibold text-center italic justify-center">
+          I have got just what you need.
+          {/* {" "} */}
+          {/* <span className="underline decoration-[#F7AB0A]/50">Lets Talk</span> */}
         </h5>
         <div className="space-y-5">
-          <div className="flex items-center space-x-5 justify-start mt-5">
+          <div className="flex items-center space-x-5 justify-center mt-5">
             <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
             <p className="text-2xl">+91-9088099081</p>
           </div>
-          <div className="flex items-center space-x-5 justify-start">
+          <div className="flex items-center space-x-5 justify-center">
             <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
             <p className="text-2xl">Ranchi(JH), India</p>
           </div>
-          <div className="flex items-center space-x-5 justify-start">
+          <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
             <p className="text-2xl">mailmeonravikumar@gmail.com</p>
           </div>
@@ -51,7 +52,7 @@ function ContactMe({}: Props) {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit md:w-fit mx-10 md:mx-0 max-sm:pl-10"
+          className="flex flex-col space-y-2 w-fit md:w-fit mx-10 md:mx-0 sm:pl-10 m-auto"
         >
           <div className="flex flex-col space-y-2 md:space-y-0 md:space-x-2 md:flex-row">
             <input
