@@ -94,10 +94,10 @@ export default function Header({ socials }: Props) {
         className="flex flex-row items-center text-grey-300 cursor-pointer
          "
       >
-        <div>
+        <div className="mr-2">
           <SocialIcon
             url="#contact"
-            className="cursor-pointer scale-100 hover:scale-125 ease-in duration-100"
+            className="cursor-pointer scale-100 hover:scale-125 ease-in duration-100 mr-2"
             network="email"
             fgColor="#f87171"
             bgColor="transparent"
