@@ -59,7 +59,7 @@ function About({ pageInfo }: Props) {
           <span className="underline decoration-[#F7AB0A]">little</span>{" "}
           background
         </h4>
-        <p className="text-base">{pageInfo?.backgroundInformation}</p>
+        <p className="text-sm md:text-md">{pageInfo?.backgroundInformation}</p>
       </div>
       <div
         className="w-full absolute top-[25%] bg-[#F7AB0A]/5 left-0

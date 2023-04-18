@@ -25,15 +25,13 @@ function ContactMe({}: Props) {
     >
       <h3
         className="absolute top-20 uppercase tracking-[20px]
-                     text-[#fee2e2] text-xl md:text-2xl"
+                     text-[#fee2e2] text-base md:text-2xl"
       >
         Contact
       </h3>
-      <div className="flex flex-col space-y-0 text-center m-auto">
+      <div className="flex flex-col space-y-0 text-center m-auto mt-56">
         <h5 className="text-xl md:text-3xl font-semibold text-center italic justify-center">
           I have got just what you need.
-          {/* {" "} */}
-          {/* <span className="underline decoration-[#F7AB0A]/50">Lets Talk</span> */}
         </h5>
         <div className="space-y-5">
           <div className="flex items-center space-x-5 justify-center mt-5">
@@ -46,13 +44,13 @@ function ContactMe({}: Props) {
           </div>
           <div className="flex items-center space-x-5 justify-center">
             <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-xl">mailmeonravikumar@gmail.com</p>
+            <p className="text-base md:text-xl">mailmeonravikumar@gmail.com</p>
           </div>
         </div>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit md:w-fit mx-10 md:mx-0 sm:pl-10 m-auto"
+          className="flex flex-col space-y-2 w-fit md:w-fit mx-10 md:mx-0 sm:pl-10 mb-5 md:mb-0 m-auto"
         >
           <div className="flex flex-col space-y-2 md:space-y-0 md:space-x-2 md:flex-row">
             <input

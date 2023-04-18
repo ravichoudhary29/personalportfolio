@@ -20,7 +20,7 @@ function Projects({ projects }: Props) {
     >
       <h3
         className="absolute top-24 uppercase tracking-[12px] md:tracking-[20px]
-                     text-[#fee2e2] text-xl z-30 justify-center"
+                     text-[#fee2e2] text-2xl z-30 justify-center"
       >
         React Projects
       </h3>
