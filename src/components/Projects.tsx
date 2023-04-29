@@ -75,6 +75,15 @@ function Projects({ projects }: Props) {
                     {project?.title}
                   </h4>
                 </a>
+                <a
+                  href={project.githubRepo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <h4 className=" text-sm bg-[#333] rounded-lg text-white px-4 py-2 hover:bg-[#111] transition-colors">
+                    <span className="underline">GitHub Repo</span>
+                  </h4>
+                </a>
               </div>
             </div>
           </div>

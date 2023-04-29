@@ -33,5 +33,10 @@ export default {
       title: 'LinkToBuild',
       type: 'url',
     },
+    {
+      name: 'githubRepo',
+      title: 'GitHub Repository',
+      type: 'url',
+    },
   ],
 }
