@@ -69,7 +69,7 @@ function Projects({ projects }: Props) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <h4 className=" text-sm bg-[#F97316] rounded-lg text-white px-4 py-2 hover:bg-[#CA6400] transition-colors">
+                  <h4 className=" text-sm bg-[#333] rounded-lg text-white px-4 py-2 hover:bg-[#111] transition-colors">
                     <span className="underline">Link to</span>
                     {":"}
                     {project?.title}
@@ -80,8 +80,8 @@ function Projects({ projects }: Props) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <h4 className=" text-sm bg-[#333] rounded-lg text-white px-4 py-2 hover:bg-[#111] transition-colors">
-                    <span className="underline">GitHub Repo</span>
+                  <h4 className=" text-sm bg-[#333] rounded-lg text-white px-4 py-2 hover:bg-[#111] transition-colors ml-5">
+                    <span>GitHub Repo</span>
                   </h4>
                 </a>
               </div>

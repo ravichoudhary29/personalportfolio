@@ -20,8 +20,8 @@ function ContactMe({}: Props) {
   return (
     <div
       id="contact"
-      className="h-screen relative flex overflow-hidden flex-col text-center
-                md:flex-row max-w-full justify-evenly mx-auto items-center z-0"
+      className="min-h-screen relative flex overflow-hidden flex-col text-center
+              md:flex-row max-w-full justify-evenly mx-auto items-center z-0 mb-auto"
     >
       <h3
         className="absolute top-20 uppercase tracking-[20px]
@@ -29,7 +29,7 @@ function ContactMe({}: Props) {
       >
         Contact
       </h3>
-      <div className="flex flex-col space-y-0 text-center m-auto mt-56">
+      <div className="flex flex-col space-y-0 text-center m-auto mt-40">
         <h5 className="text-xl md:text-3xl font-semibold text-center italic justify-center">
           I have got just what you need.
         </h5>
