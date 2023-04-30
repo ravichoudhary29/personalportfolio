@@ -14,8 +14,8 @@ type Props = {
 function Projects({ projects }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    const target = e.target as HTMLDivElement;
+  function handleScroll(e: Event) {
+    const target = e.currentTarget as HTMLDivElement;
     const scrollLeft = target.scrollLeft;
     const clientWidth = target.clientWidth;
 
@@ -27,15 +27,18 @@ function Projects({ projects }: Props) {
       const newIndex = Math.round(scrollLeft / clientWidth);
       setCurrentIndex(newIndex);
     }
-  };
+  }
   useEffect(() => {
     const projectsDiv = document.getElementById("projects-div");
     if (projectsDiv) {
-      projectsDiv.addEventListener("scroll", handleScroll);
+      projectsDiv.addEventListener("scroll", handleScroll as EventListener);
     }
     return () => {
       if (projectsDiv) {
-        projectsDiv.removeEventListener("scroll", handleScroll);
+        projectsDiv.removeEventListener(
+          "scroll",
+          handleScroll as EventListener
+        );
       }
     };
   }, []);
