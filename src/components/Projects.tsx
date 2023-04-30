@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, UIEvent } from "react";
 import { motion } from "framer-motion";
 import { Project } from "../../typings";
 import { urlFor } from "../../sanity";
@@ -14,11 +14,20 @@ type Props = {
 function Projects({ projects }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleScroll = (e) => {
-    const newIndex = Math.round(e.target.scrollLeft / e.target.clientWidth);
-    setCurrentIndex(newIndex);
-  };
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLDivElement;
+    const scrollLeft = target.scrollLeft;
+    const clientWidth = target.clientWidth;
 
+    if (scrollLeft === 0) {
+      setCurrentIndex(0);
+    } else if (scrollLeft + clientWidth === target.scrollWidth) {
+      setCurrentIndex(projects.length - 1);
+    } else {
+      const newIndex = Math.round(scrollLeft / clientWidth);
+      setCurrentIndex(newIndex);
+    }
+  };
   useEffect(() => {
     const projectsDiv = document.getElementById("projects-div");
     if (projectsDiv) {
