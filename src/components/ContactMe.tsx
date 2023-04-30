@@ -20,8 +20,8 @@ function ContactMe({}: Props) {
   return (
     <div
       id="contact"
-      className="min-h-screen relative flex overflow-hidden flex-col text-center
-              md:flex-row max-w-full justify-evenly mx-auto items-center z-0 mb-auto"
+      className="min-h-[calc(100vh-6rem)] relative flex overflow-hidden flex-col text-center
+              md:flex-row max-w-full justify-evenly mx-auto items-center z-0 mb-auto overflow-y-scroll"
     >
       <h3
         className="absolute top-20 uppercase tracking-[20px]
@@ -29,7 +29,7 @@ function ContactMe({}: Props) {
       >
         Contact
       </h3>
-      <div className="flex flex-col space-y-0 text-center m-auto mt-40">
+      <div className="flex flex-col space-y-0 text-center m-auto mt-40 flex-shrink-0 flex-grow">
         <h5 className="text-xl md:text-3xl font-semibold text-center italic justify-center">
           I have got just what you need.
         </h5>
@@ -47,43 +47,44 @@ function ContactMe({}: Props) {
             <p className="text-base md:text-xl">mailmeonravikumar@gmail.com</p>
           </div>
         </div>
-
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit md:w-fit mx-10 md:mx-0 sm:pl-10 mb-5 md:mb-0 m-auto"
-        >
-          <div className="flex flex-col space-y-2 md:space-y-0 md:space-x-2 md:flex-row">
+        <div className="flex justify-center items-center w-full mb-10">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col space-y-2 w-fit md:w-fit mx-10 md:mx-0 sm:pl-10 mb-5 md:mb-0 m-auto mt-2"
+          >
+            <div className="flex flex-col space-y-2 md:space-y-0 md:space-x-2 md:flex-row">
+              <input
+                {...register("name")}
+                placeholder="Name"
+                className="contactInput"
+                type="text"
+              />
+              <input
+                {...register("email")}
+                placeholder="Email"
+                className="contactInput"
+                type="email"
+              />
+            </div>
             <input
-              {...register("name")}
-              placeholder="Name"
+              {...register("subject")}
+              placeholder="Subject"
               className="contactInput"
               type="text"
             />
-            <input
-              {...register("email")}
-              placeholder="Email"
+            <textarea
+              {...register("message")}
+              placeholder="Message"
               className="contactInput"
-              type="email"
             />
-          </div>
-          <input
-            {...register("subject")}
-            placeholder="Subject"
-            className="contactInput"
-            type="text"
-          />
-          <textarea
-            {...register("message")}
-            placeholder="Message"
-            className="contactInput"
-          />
-          <button
-            type="submit"
-            className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold align-middle justify-center"
-          >
-            Submit
-          </button>
-        </form>
+            <button
+              type="submit"
+              className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold align-middle justify-center"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
       <div
         className="w-full absolute top-[15%] bg-[#F29090]/5 left-0

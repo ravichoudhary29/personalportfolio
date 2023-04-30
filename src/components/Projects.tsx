@@ -1,13 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Project } from "../../typings";
 import { urlFor } from "../../sanity";
+import {
+  ChevronDoubleLeftIcon,
+  ChevronDoubleRightIcon,
+} from "@heroicons/react/24/solid";
 
 type Props = {
   projects: Project[];
 };
 
 function Projects({ projects }: Props) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleScroll = (e) => {
+    const newIndex = Math.round(e.target.scrollLeft / e.target.clientWidth);
+    setCurrentIndex(newIndex);
+  };
+
+  useEffect(() => {
+    const projectsDiv = document.getElementById("projects-div");
+    if (projectsDiv) {
+      projectsDiv.addEventListener("scroll", handleScroll);
+    }
+    return () => {
+      if (projectsDiv) {
+        projectsDiv.removeEventListener("scroll", handleScroll);
+      }
+    };
+  }, []);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -16,7 +38,7 @@ function Projects({ projects }: Props) {
       }}
       transition={{ duration: 1.5 }}
       className="h-screen relative flex overflow-hidden flex-col text-left
-                md:flex-row max-w-full justify-evenly mx-auto items-center z-0 "
+                md:flex-row max-w-full justify-evenly mx-auto items-center z-0 overflow-y-scroll"
     >
       <h3
         className="absolute top-24 uppercase tracking-[12px] md:tracking-[20px]
@@ -24,7 +46,14 @@ function Projects({ projects }: Props) {
       >
         React Projects
       </h3>
+      {currentIndex > 0 && (
+        <ChevronDoubleLeftIcon className="absolute top-[40%] left-2 z-10 h-12 w-12 text-[#F7AB0A] cursor-pointer" />
+      )}
+      {currentIndex < projects.length - 1 && (
+        <ChevronDoubleRightIcon className="absolute top-[40%] right-2 z-10 h-12 w-12 text-[#F7AB0A] cursor-pointer" />
+      )}
       <div
+        id="projects-div"
         className="relative w-full flex overflow-x-scroll overflow-y-scroll
                    snap-x snap-mandatory z-20  scrollbar-thin scroll-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 mt-20"
       >
