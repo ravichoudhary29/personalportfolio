@@ -36,13 +36,14 @@ function Projects({ projects }: Props) {
                             md:p-44 h-screen object-contain object-center "
           >
             <motion.img
-              className="object-cover w-full max-h-screen md:w-52 md:h-52 lg:w-96 lg:h-96 rounded-md"
+              className="object-cover w-full max-h-screen md:w-52 md:h-52 lg:w-96 lg:h-96 xl:w-[30vw] xl:h-[30vw] rounded-md"
               initial={{ y: -300, opacity: 0 }}
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               src={urlFor(project?.image).url()}
             />
+
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-2xl md:text-4xl font-semifold text-center">
                 <span className="underline decoration-[#F7AB0A]/50">
